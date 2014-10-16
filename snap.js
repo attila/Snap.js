@@ -237,7 +237,7 @@
                         var theTranslate = 'translate3d(' + n + 'px, 0,0)';
                         settings.element.style[cache.vendor+'Transform'] = theTranslate;
                     } else {
-                        settings.element.style.width = (win.innerWidth || doc.documentElement.clientWidth)+'px';
+                        settings.element.style.width = (doc.documentElement.clientWidth || win.innerWidth)+'px';
 
                         settings.element.style.left = n+'px';
                         settings.element.style.right = '';
