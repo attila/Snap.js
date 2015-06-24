@@ -256,6 +256,10 @@
                     utils.events.removeEvent(settings.element, utils.eventType('up'), action.drag.endDrag);
                 },
                 startDrag: function(e) {
+                    if (!settings.touchToDrag) {
+                        return;
+                    }
+
                     // No drag on ignored elements
                     var target = e.target ? e.target : e.srcElement,
                         ignoreParent = utils.parentUntil(target, 'data-snap-ignore');
